@@ -98,7 +98,7 @@
         app:layout_constraintStart_toStartOf="@+id/toolbarConversation"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <nie.translator.rtranslatordevedition.tools.gui.ButtonSearch
+    <nie.translator.rtranslator.tools.gui.ButtonSearch
         android:id="@+id/searchButton"
         android:layout_width="24dp"
         android:layout_height="24dp"

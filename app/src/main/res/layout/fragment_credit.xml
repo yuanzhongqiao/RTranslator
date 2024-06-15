@@ -232,7 +232,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <nie.translator.rtranslatordevedition.tools.gui.KeyFileSelectorButton
+                    <nie.translator.rtranslator.tools.gui.KeyFileSelectorButton
                         android:id="@+id/editKeyButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

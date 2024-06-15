@@ -65,7 +65,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_user_name"
-                    android:elevation="4dp"
                     android:inputType="text"
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"

@@ -25,7 +25,7 @@
     android:background="@color/very_very_light_gray"
     android:fitsSystemWindows="true">
 
-    <Toolbar
+    <android.widget.Toolbar
         android:id="@+id/toolbarPairing"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -58,7 +58,7 @@
         app:layout_constraintStart_toStartOf="@+id/toolbarPairing"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <nie.translator.rtranslatordevedition.tools.gui.ButtonSearch
+    <nie.translator.rtranslator.tools.gui.ButtonSearch
         android:id="@+id/searchButton"
         android:layout_width="24dp"
         android:layout_height="24dp"
@@ -203,27 +203,4 @@
                 app:layout_constraintVertical_bias="0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-
-    <nie.translator.rtranslatordevedition.tools.gui.WalkieTalkieButton
-        android:id="@+id/buttonStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="24dp"
-        android:clickable="true"
-        android:elevation="16dp"
-        android:focusable="true"
-        android:src="@drawable/walkie_talkie_white_icon"
-        android:tint="@color/primary"
-        app:maxImageSize="40dp"
-        app:rippleColor="@color/light_gray"
-        app:backgroundTint="@color/accent_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

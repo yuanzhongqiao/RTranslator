@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <nie.translator.rtranslatordevedition.tools.gui.ButtonKeyboard
+        <nie.translator.rtranslator.tools.gui.ButtonKeyboard
             android:id="@+id/buttonKeyboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <nie.translator.rtranslatordevedition.tools.gui.ButtonSound
+        <nie.translator.rtranslator.tools.gui.ButtonSound
             android:id="@+id/buttonSound"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
             android:ems="10"
             android:focusableInTouchMode="true"
             android:hint="@string/hint_edit_text_message"
-            android:inputType="none|text|textAutoCorrect|textAutoComplete"
+            android:inputType="textCapSentences|text|textAutoCorrect|textAutoComplete"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -102,7 +102,7 @@
             app:layout_constraintStart_toEndOf="@+id/editText"
             app:layout_constraintTop_toTopOf="parent">
 
-            <nie.translator.rtranslatordevedition.tools.gui.ButtonMic
+            <nie.translator.rtranslator.tools.gui.ButtonMic
                 android:id="@+id/buttonMic"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
