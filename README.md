@@ -89,14 +89,22 @@ Arabic, Bulgarian, Catalan, Chinese, Czech, Danish, German, Greek, English, Span
 
 <h3>Privacy</h3>
 
-Privacy is a fundamental right. That's why RTranslator does not collect any personal data (I don't even have a server). For more information, read the <a href="https://github.com/niedev/RTranslator/blob/v2.00/privacy/Privacy_Policy_en.md" target="_blank" rel="noopener noreferrer">privacy policy</a>.
+Privacy is a fundamental right. That's why RTranslator does not collect any personal data (I don't even have a server). For more information, read the <a href="https://github.com/niedev/RTranslator/blob/v2.00/privacy/Privacy_Policy_en.md" target="_blank" rel="noopener noreferrer">privacy policy</a> (for now is the same privacy policy of RTranslator 1.0, but I will update it in the future).
 <br /><br />
 
 <h3>Libraries</h3>
 
-RTranslator uses three open-source libraries, one for communication between devices, another for selecting and cropping the profile image from the gallery and another as an accelerator engine for the AI models.
+RTranslator uses 4 external libraries:
 
-The three libraries are <a href="https://github.com/niedev/BluetoothCommunicator" target="_blank" rel="noopener noreferrer">BluetoothCommunicator</a>, <a href="https://github.com/niedev/GalleryImageSelector" target="_blank" rel="noopener noreferrer">GalleryImageSelector</a> and [OnnxRuntime](https://github.com/microsoft/onnxruntime) respectively. See their GitHub pages and sample apps for more details.
+<a href="https://github.com/niedev/BluetoothCommunicator">BluetoothCommunicator</a> (open-source): Used for Bluetooth LE communication between devices.
+
+<a href="https://github.com/niedev/GalleryImageSelector">GalleryImageSelector</a> (open-source): Used for selecting and cropping the profile image from the gallery.
+
+[OnnxRuntime](https://github.com/microsoft/onnxruntime) (open-source): Used as an accelerator engine for the AI models.
+
+<a href="https://developers.google.com/ml-kit/language/identification">Ml Kit</a> (closed-source): Used for the identification of the language in the WalkieTalkie mode.
+
+See their linked pages and sample apps for more details.
 <br /><br />
 
 <h3>Donations</h3>
