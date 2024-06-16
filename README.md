@@ -72,7 +72,7 @@ If you have a pretty crappy phone (or if you want maximum speed) you can always 
 
 <h3>Download</h3>
 
-To install the app, download the latest version of the app apk file from https://github.com/niedev/RTranslator/releases/ and install it. 
+To install the app, download the latest version of the app apk file from https://github.com/niedev/RTranslator/releases/ and install it (ignore the other files, those will be downloaded automatically by the app on the first start).
 
 <a href='https://github.com/niedev/RTranslator/releases'><img alt='Get it on GitHub' src='https://github.com/niedev/RTranslator/blob/v2.00/images/get_it_on_github.png' style="width: 180px; height: 58px;" /></a>
 
