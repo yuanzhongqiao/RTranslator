@@ -3,12 +3,12 @@
 RTranslator is the world's first open source real-time translation app. Now also offline, with zero tracking and totally free.
 
 Connect to someone who has the app, connect Bluetooth headphones, put the phone in your pocket and you can have a conversation as if the other person spoke your language.
-<br /><br /><br />
+<br /><br />
 
-![Conversation mode](https://github.com/niedev/RTranslator/blob/v2.00/images/conversation_image_github.png)
-<br /><br /><br />
-![WalkieTalkie mode and Costs](https://github.com/niedev/RTranslator/blob/v2.00/images/WalkieTalkie_and_Costs_image_github.png)
-<br /><br /><br />
+![Conversation mode](https://github.com/niedev/RTranslator/blob/v2.00/images/Conversation_image.png)
+<br /><br />
+![WalkieTalkie mode and Costs](https://github.com/niedev/RTranslator/blob/v2.00/images/TextTranslation_and_WalkieTalkie.png)
+<br /><br />
 
 <h3>Conversation mode</h3>
 
@@ -64,7 +64,7 @@ Fixed some bugs.
 
 <h3>Performance</h3>
 
-I have optimized the AI models a lot to minimize RAM consumption and execution time, despite this however to be able to use the app without the risk of crashing you need a phone with at least 6GB of RAM, and to have a good enough execution time you need a phone with a fast enough CPU.
+I have optimized the AI models a lot to minimize RAM consumption and execution time, despite this however to be able to use the app without the risk of crashing you need a phone with at least **6GB of RAM**, and to have a good enough execution time you need a phone with a fast enough CPU.
 
 If you have a pretty crappy phone (or if you want maximum speed) you can always use <a href="https://github.com/niedev/RTranslator/tree/v1.00">version 1.0 of RTranslator</a> (but since it uses Google APIs it's not free and needs some initial setup).
 <br /><br />
@@ -74,7 +74,7 @@ If you have a pretty crappy phone (or if you want maximum speed) you can always 
 
 To install the app, download the latest version of the app apk file from https://github.com/niedev/RTranslator/releases/ and install it. 
 
-<a href='https://github.com/niedev/RTranslator/releases'><img alt='Get it on GitHub' src='https://github.com/niedev/RTranslator/blob/v2.00/images/get_it_on_github_white_border.png' style="width: 190px; height: 80px;" /></a>
+<a href='https://github.com/niedev/RTranslator/releases'><img alt='Get it on GitHub' src='https://github.com/niedev/RTranslator/blob/v2.00/images/get_it_on_github.png' style="width: 180px; height: 58px;" /></a>
 
 On the first launch, you will need to download the templates for translation and speech recognition (1.2GB) and once done you can start translating.
 <br /><br />
@@ -92,7 +92,7 @@ Arabic, Bulgarian, Catalan, Chinese, Czech, Danish, German, Greek, English, Span
 Privacy is a fundamental right. That's why RTranslator does not collect any personal data (I don't even have a server). For more information, read the <a href="https://github.com/niedev/RTranslator/blob/v2.00/privacy/Privacy_Policy_en.md" target="_blank" rel="noopener noreferrer">privacy policy</a> (for now is the same privacy policy of RTranslator 1.0, but I will update it in the future).
 <br /><br />
 
-<h3>Libraries</h3>
+<h3>Libraries and models</h3>
 
 RTranslator uses 4 external libraries:
 
@@ -103,8 +103,14 @@ RTranslator uses 4 external libraries:
 [OnnxRuntime](https://github.com/microsoft/onnxruntime) (open-source): Used as an accelerator engine for the AI models.
 
 <a href="https://developers.google.com/ml-kit/language/identification">Ml Kit</a> (closed-source): Used for the identification of the language in the WalkieTalkie mode.
+<br /><br />
+And 2 AI models:
 
-See their linked pages and sample apps for more details.
+<a href="https://github.com/facebookresearch/fairseq/tree/nllb">NLLB</a>: The model used is NLLB-Distilled-600M with KV cache.
+
+<a href="https://github.com/openai/whisper">Whisper</a>: The model used is Whisper-Small-244M with KV cache.
+
+I converted both models to onnx format and quantized them in int8 (excluding some weights to ensure almost zero quality loss), also I separated some parts of the models to reduce RAM consumption (without this separation some weights were duplicated at runtime consuming more RAM than expected).
 <br /><br />
 
 <h3>Donations</h3>
