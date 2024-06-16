@@ -49,7 +49,7 @@
         android:layout_marginBottom="8dp"
         android:indeterminateTint="@color/white"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/fragment_container"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_settings_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="parent"

@@ -143,7 +143,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
             }
         });
 
-        //inizializzazione user name
+        // user name initialization
         userNamePreference = (UserNamePreference) findPreference("changeName");
         userNamePreference.setActivity(activity);
         /*userNamePreference.getEditTextHeight(new UserNamePreference.DateCallback() {
@@ -161,12 +161,12 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         supportTtsQualityPreference = (SupportTtsQualityPreference) findPreference("languagesQualityLow");
         supportTtsQualityPreference.setFragment(this);
 
-        //languages list initialization
+        // languages list initialization
         languagePreference = (LanguagePreference) findPreference("language");
         languagePreference.setFragment(this);
         languagePreference.initializeLanguagesList();
 
-        //link tts settings initialization
+        // link tts settings initialization
         Preference ttsPreference = findPreference("tts");
         ttsPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override

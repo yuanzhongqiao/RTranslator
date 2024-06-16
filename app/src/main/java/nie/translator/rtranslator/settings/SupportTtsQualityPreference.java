@@ -90,7 +90,6 @@ public class SupportTtsQualityPreference extends SwitchPreference {
                 }
             }
         });
-
         fragment.addDownload();
     }
 
