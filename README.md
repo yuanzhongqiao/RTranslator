@@ -76,7 +76,7 @@ To install the app, download the latest version of the app apk file from https:/
 
 <a href='https://github.com/niedev/RTranslator/releases'><img alt='Get it on GitHub' src='https://github.com/niedev/RTranslator/blob/v2.00/images/get_it_on_github.png' style="width: 180px; height: 58px;" /></a>
 
-On the first launch, you will need to download the templates for translation and speech recognition (1.2GB) and once done you can start translating.
+On the first launch, you will need to download the models for translation and speech recognition (1.2GB) and once done you can start translating.
 <br /><br />
 
 
