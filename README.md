@@ -94,7 +94,7 @@ Privacy is a fundamental right. That's why RTranslator does not collect any pers
 
 <h3>Libraries and models</h3>
 
-RTranslator uses 4 external libraries:
+RTranslator uses the following external libraries:
 
 <a href="https://github.com/niedev/BluetoothCommunicator">BluetoothCommunicator</a> (open-source): Used for Bluetooth LE communication between devices.
 
@@ -102,9 +102,11 @@ RTranslator uses 4 external libraries:
 
 [OnnxRuntime](https://github.com/microsoft/onnxruntime) (open-source): Used as an accelerator engine for the AI models.
 
+<a href="https://github.com/google/sentencepiece">SentencePiece</a> (open-source): Used for tokenization of the input text for NLLB.
+
 <a href="https://developers.google.com/ml-kit/language/identification">Ml Kit</a> (closed-source): Used for the identification of the language in the WalkieTalkie mode.
 <br /><br />
-And 2 AI models:
+And the following AI models:
 
 <a href="https://github.com/facebookresearch/fairseq/tree/nllb">NLLB</a>: The model used is NLLB-Distilled-600M with KV cache.
 
