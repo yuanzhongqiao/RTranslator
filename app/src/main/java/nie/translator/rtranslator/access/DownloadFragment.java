@@ -46,16 +46,16 @@ import nie.translator.rtranslator.tools.FileTools;
 
 public class DownloadFragment extends Fragment {
     public static final String[] DOWNLOAD_URLS = {
-            "https://github.com/niedev/NeuralNetworkDemo/releases/download/RTranslator_models/NLLB_cache_initializer.onnx",
-            "https://github.com/niedev/NeuralNetworkDemo/releases/download/RTranslator_models/NLLB_decoder.onnx",
-            "https://github.com/niedev/NeuralNetworkDemo/releases/download/RTranslator_models/NLLB_embed_and_lm_head.onnx",
-            "https://github.com/niedev/NeuralNetworkDemo/releases/download/RTranslator_models/NLLB_encoder.onnx",
-            "https://github.com/niedev/NeuralNetworkDemo/releases/download/RTranslator_models/Whisper_cache_initializer.onnx",
-            "https://github.com/niedev/NeuralNetworkDemo/releases/download/RTranslator_models/Whisper_cache_initializer_batch.onnx",
-            "https://github.com/niedev/NeuralNetworkDemo/releases/download/RTranslator_models/Whisper_decoder.onnx",
-            "https://github.com/niedev/NeuralNetworkDemo/releases/download/RTranslator_models/Whisper_detokenizer.onnx",
-            "https://github.com/niedev/NeuralNetworkDemo/releases/download/RTranslator_models/Whisper_encoder.onnx",
-            "https://github.com/niedev/NeuralNetworkDemo/releases/download/RTranslator_models/Whisper_initializer.onnx"
+            "https://github.com/niedev/RTranslator/releases/download/2.0.0/NLLB_cache_initializer.onnx",
+            "https://github.com/niedev/RTranslator/releases/download/2.0.0/NLLB_decoder.onnx",
+            "https://github.com/niedev/RTranslator/releases/download/2.0.0/NLLB_embed_and_lm_head.onnx",
+            "https://github.com/niedev/RTranslator/releases/download/2.0.0/NLLB_encoder.onnx",
+            "https://github.com/niedev/RTranslator/releases/download/2.0.0/Whisper_cache_initializer.onnx",
+            "https://github.com/niedev/RTranslator/releases/download/2.0.0/Whisper_cache_initializer_batch.onnx",
+            "https://github.com/niedev/RTranslator/releases/download/2.0.0/Whisper_decoder.onnx",
+            "https://github.com/niedev/RTranslator/releases/download/2.0.0/Whisper_detokenizer.onnx",
+            "https://github.com/niedev/RTranslator/releases/download/2.0.0/Whisper_encoder.onnx",
+            "https://github.com/niedev/RTranslator/releases/download/2.0.0/Whisper_initializer.onnx"
     };
     public static final String[] DOWNLOAD_NAMES = {
             "NLLB_cache_initializer.onnx",

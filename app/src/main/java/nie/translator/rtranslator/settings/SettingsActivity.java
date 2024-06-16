@@ -29,9 +29,6 @@ import nie.translator.rtranslator.R;
 
 public class SettingsActivity extends GeneralActivity {
     public static final String SETTINGS_FRAGMENT = "startSettings";
-    public static final String CHANGE_EMAIL_FRAGMENT = "startChangeEmail";
-    public static final String CONFIRM_EMAIL_FRAGMENT = "startConfirm";
-    public static final String CHANGE_PASSWORD_FRAGMENT = "startChangePsw";
     private Fragment fragment;
 
     @Override
@@ -45,7 +42,7 @@ public class SettingsActivity extends GeneralActivity {
         getActionBar().setDisplayShowHomeEnabled(true);
 
         View decorView = getWindow().getDecorView();
-        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | /*View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |*/ View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         if (savedInstanceState != null) {
             //Restore the fragment's instance

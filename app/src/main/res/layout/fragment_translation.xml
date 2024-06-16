@@ -347,7 +347,7 @@
             android:clickable="true"
             android:elevation="16dp"
             android:focusable="true"
-            android:src="@drawable/walkie_talkie_white_icon"
+            android:src="@drawable/conversation_icon"
             android:tint="@color/primary"
             app:backgroundTint="@color/accent_white"
             app:layout_constraintBottom_toTopOf="@+id/textView"
