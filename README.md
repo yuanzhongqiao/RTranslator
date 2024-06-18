@@ -1,6 +1,6 @@
 <img src="https://github.com/niedev/RTranslator/blob/v2.00/images/logo_beta_cut.png" width="280">
 
-RTranslator is the world's first open source real-time translation app. Now also offline, with zero tracking and totally free.
+RTranslator is an open-source, free, and offline real-time translation app.
 
 Connect to someone who has the app, connect Bluetooth headphones, put the phone in your pocket and you can have a conversation as if the other person spoke your language.
 <br /><br />
