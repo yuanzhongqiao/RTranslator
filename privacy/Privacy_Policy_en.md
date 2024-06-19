@@ -31,7 +31,7 @@ Specific summary information, in which the consent of the processing of the proc
 #### Data deriving from the installation of the APP
 The "RTranslator" App does not process and manage any type of personal data, except those deriving from the installation and use of the same.
 After downloading and installing the App, the model used, as well as the type and version of the operating system used, are automatically detected by the mobile device. This information helps us to provide the required services and manage the App, analyze its use, protect the app and its content from inappropriate or inappropriate use and improve the user experience.<br />
-The only data used, relating to the user's position and data, such as audio and the transcription of the same, are those that will then be sent to third parties, in this case Google, which allow to provide the services made available to the App. take care of its maintenance, improve it and communicate with users.<br />
+The only data used, relating to the user's data such as audio and the transcription of the same, are those that will then be sent to third parties, in this case Google, which allow to provide the services made available to the App. take care of its maintenance, improve it and communicate with users.<br />
 The download of the App is also used as a numeric data for the sole purpose of obtaining anonymous statistical information about the number of users who download the App itself.<br />
 As regards the data saved by the App in the device keystore, on the basis of the operating system used, the following is reported:
 - Android: the data is saved in the shared preferences until the customer executes "Clear data" from the Application Manager or uninstalls the App;
