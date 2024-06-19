@@ -108,16 +108,16 @@ RTranslator uses the following external libraries:
 <br /><br />
 And the following AI models:
 
-<a href="https://github.com/facebookresearch/fairseq/tree/nllb">NLLB</a>: The model used is NLLB-Distilled-600M with KV cache.
+<a href="https://github.com/facebookresearch/fairseq/tree/nllb">NLLB</a> (open-source, but only for non-commercial use): The model used is NLLB-Distilled-600M with KV cache.
 
-<a href="https://github.com/openai/whisper">Whisper</a>: The model used is Whisper-Small-244M with KV cache.
+<a href="https://github.com/openai/whisper">Whisper</a> (open-source): The model used is Whisper-Small-244M with KV cache.
 
 I converted both models to onnx format and quantized them in int8 (excluding some weights to ensure almost zero quality loss), also I separated some parts of the models to reduce RAM consumption (without this separation some weights were duplicated at runtime consuming more RAM than expected).
 <br /><br />
 
 <h3>Donations</h3>
 
-This is an open source and completely ad-free app, I don't make any money from it.
+This is an open-source and completely ad-free app, I don't make any money from it.
 
 So, if you like the project and want to say thank you and support the project, you can make a donation via PayPal by clicking on the button below (any amount is well accepted).
 
