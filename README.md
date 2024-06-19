@@ -119,7 +119,7 @@ I converted both models to onnx format and quantized them in int8 (excluding som
 
 This is an open-source and completely ad-free app, I don't make any money from it.
 
-So, if you like the project and want to say thank you and support the project, you can make a donation via PayPal by clicking on the button below (any amount is well accepted).
+So, if you like the app and want to say thank you and support the project, you can make a donation via PayPal by clicking on the button below (any amount is well accepted).
 
 <a href='https://www.paypal.com/donate/?business=3VBKS3WC6AFHN&no_recurring=0&currency_code=EUR'><img alt='Donate' src='https://raw.githubusercontent.com/niedev/RTranslator/v2.00/images/Paypal.png' style="width: 190px; height: 80px;" /></a>
 
