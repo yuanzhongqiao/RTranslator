@@ -94,7 +94,7 @@ Privacy is a fundamental right. That's why RTranslator does not collect any pers
 
 <h3>Libraries and models</h3>
 
-RTranslator uses the following external libraries:
+RTranslator code is completely open-source, but some of the external libraries it uses have less permissive licenses, these are all the external libraries used by the app (with the indication of their license):
 
 <a href="https://github.com/niedev/BluetoothCommunicator">BluetoothCommunicator</a> (open-source): Used for Bluetooth LE communication between devices.
 
