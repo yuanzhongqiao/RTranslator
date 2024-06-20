@@ -67,7 +67,7 @@ public class SupportTtsQualityPreference extends SwitchPreference {
     }
 
     public void downloadLanguages() {
-        global.getLanguages(false, new Global.GetLocalesListListener() {
+        global.getLanguages(false, true, new Global.GetLocalesListListener() {
             @Override
             public void onSuccess(ArrayList<CustomLocale> result) {
                 fragment.removeDownload();

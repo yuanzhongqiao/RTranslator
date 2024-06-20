@@ -126,6 +126,12 @@ public abstract class VoiceTranslationFragment extends Fragment implements Micro
 
 
         sound.setOnClickListenerForDeactivated(deactivatedClickListener);
+        sound.setOnClickListenerForTTSError(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(global, R.string.error_tts_toast, Toast.LENGTH_SHORT).show();
+            }
+        });
         sound.setOnClickListenerForActivated(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -246,7 +252,7 @@ public abstract class VoiceTranslationFragment extends Fragment implements Micro
     public void restoreAttributesFromService() {
         voiceTranslationServiceCommunicator.getAttributes(new VoiceTranslationService.AttributesListener() {
             @Override
-            public void onSuccess(ArrayList<GuiMessage> messages, boolean isMicMute, boolean isAudioMute, final boolean isEditTextOpen, boolean isBluetoothHeadsetConnected) {
+            public void onSuccess(ArrayList<GuiMessage> messages, boolean isMicMute, boolean isAudioMute, boolean isTTSError, final boolean isEditTextOpen, boolean isBluetoothHeadsetConnected) {
                 // initialization with service values
                 mAdapter = new MessagesAdapter(messages, new MessagesAdapter.Callback() {
                     @Override
@@ -259,6 +265,9 @@ public abstract class VoiceTranslationFragment extends Fragment implements Micro
                 // restore microphone and sound status
                 microphone.setMute(isMicMute);
                 sound.setMute(isAudioMute);
+                if(isTTSError){
+                    sound.deactivate(DeactivableButton.DEACTIVATED_FOR_TTS_ERROR);
+                }
                 // restore editText
                 VoiceTranslationFragment.this.isEditTextOpen = isEditTextOpen;
                 if (isEditTextOpen) {
@@ -417,12 +426,12 @@ public abstract class VoiceTranslationFragment extends Fragment implements Micro
                         activity.showInternetLackDialog(R.string.error_internet_lack_services, null);
                         break;
                     case ErrorCodes.MISSING_GOOGLE_TTS:
-                        sound.setMute(true);
-                        activity.showMissingGoogleTTSDialog();
+                        sound.deactivate(DeactivableButton.DEACTIVATED_FOR_TTS_ERROR);
+                        //activity.showMissingGoogleTTSDialog();
                         break;
                     case ErrorCodes.GOOGLE_TTS_ERROR:
-                        sound.setMute(true);
-                        activity.showGoogleTTSErrorDialog();
+                        sound.deactivate(DeactivableButton.DEACTIVATED_FOR_TTS_ERROR);
+                        //activity.showGoogleTTSErrorDialog();
                         break;
                     case VoiceTranslationService.MISSING_MIC_PERMISSION: {
                         if(getContext() != null) {
@@ -465,7 +474,7 @@ public abstract class VoiceTranslationFragment extends Fragment implements Micro
                     dialog.show();
                     break;
                 case ErrorCodes.MISSING_GOOGLE_TTS:
-                    activity.showMissingGoogleTTSDialog();
+                    activity.showMissingGoogleTTSDialog(null);
                     break;
                 case ErrorCodes.GOOGLE_TTS_ERROR:
                     activity.showGoogleTTSErrorDialog(new DialogInterface.OnClickListener() {

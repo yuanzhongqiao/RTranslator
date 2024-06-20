@@ -376,7 +376,7 @@ public class TranslationFragment extends Fragment {
         reloadButton.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
 
-        global.getLanguages(true, new Global.GetLocalesListListener() {
+        global.getLanguages(true, true, new Global.GetLocalesListListener() {
             @Override
             public void onSuccess(final ArrayList<CustomLocale> languages) {
                 progressBar.setVisibility(View.GONE);

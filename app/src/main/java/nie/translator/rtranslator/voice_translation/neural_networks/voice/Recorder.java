@@ -236,7 +236,7 @@ public class Recorder {
             //audioRecord.setPreferredDevice()
             if (audioRecord.getState() == AudioRecord.STATE_INITIALIZED) {
                 readSize = (minSizeInBytes/4)*2;
-                mBuffer = new float[(MAX_SPEECH_LENGTH_MILLIS/1000)*sampleRate];
+                mBuffer = new float[((MAX_SPEECH_LENGTH_MILLIS+1000)/1000)*sampleRate];  //the buffer size will be larger (by one second) than the audio data of duration MAX_SPEECH_LENGTH_MILLIS
                 return audioRecord;
             } else {
                 audioRecord.release();
@@ -291,7 +291,7 @@ public class Recorder {
                             }
                         }
                         mLastVoiceHeardMillis = now;
-                        if (now - mVoiceStartedMillis > MAX_SPEECH_LENGTH_MILLIS) {
+                        if (now - (mVoiceStartedMillis - global.getPrevVoiceDuration()) > MAX_SPEECH_LENGTH_MILLIS) {
                             end();
                         }
                     } else if (mLastVoiceHeardMillis != Long.MAX_VALUE) {

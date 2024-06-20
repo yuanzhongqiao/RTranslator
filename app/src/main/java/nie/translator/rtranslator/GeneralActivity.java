@@ -22,10 +22,12 @@ import android.net.Uri;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.FragmentActivity;
 
+import javax.annotation.Nullable;
+
 
 public abstract class GeneralActivity extends FragmentActivity {
 
-    public void showMissingGoogleTTSDialog() {
+    public void showMissingGoogleTTSDialog(@Nullable DialogInterface.OnClickListener continueListener) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.error_missing_tts);
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
@@ -42,6 +44,9 @@ public abstract class GeneralActivity extends FragmentActivity {
                 }
             }
         });
+        if(continueListener != null){
+            builder.setNegativeButton(R.string.continue_without_tts, continueListener);
+        }
         builder.create().show();
     }
 
@@ -52,10 +57,10 @@ public abstract class GeneralActivity extends FragmentActivity {
         builder.create().show();
     }
 
-    public void showGoogleTTSErrorDialog(DialogInterface.OnClickListener retryListener) {
+    public void showGoogleTTSErrorDialog(DialogInterface.OnClickListener continueListener) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.error_tts);
-        builder.setPositiveButton(R.string.retry, retryListener);
+        builder.setPositiveButton(R.string.continue_without_tts, continueListener);
         builder.setNegativeButton(R.string.exit, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

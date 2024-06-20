@@ -193,24 +193,26 @@ public class DownloadFragment extends Fragment {
                                 if (!error) {
                                     //we update the Gui according to the downloads status
                                     mainHandler.post(() -> {
-                                        updateProgress();
-                                        //we update the progressDescriptionText
-                                        int indexOfRunningTransfer = getIndexOfRunningTransfer();
-                                        if(indexOfRunningTransfer != -1){
-                                            String downloadName = DOWNLOAD_NAMES[indexOfRunningTransfer];
-                                            downloadName = downloadName.replace(".onnx", "");
-                                            downloadName = downloadName.replace("_", " ");
-                                            progressDescriptionText.setText(getString(R.string.description_transfer, downloadName));
-                                        }else{
-                                            SharedPreferences sharedPreferences = global.getSharedPreferences("default", Context.MODE_PRIVATE);
-                                            long currentDownloadId = sharedPreferences.getLong("currentDownloadId", -1);
-                                            if(currentDownloadId >= 0){
-                                                int indexOfRunningDownload = downloader.findDownloadUrlIndex(currentDownloadId);
-                                                if(indexOfRunningDownload >= 0){
-                                                    String downloadName = DOWNLOAD_NAMES[indexOfRunningDownload];
-                                                    downloadName = downloadName.replace(".onnx", "");
-                                                    downloadName = downloadName.replace("_", " ");
-                                                    progressDescriptionText.setText(getString(R.string.description_download, downloadName));
+                                        if(getContext() != null) {
+                                            updateProgress();
+                                            //we update the progressDescriptionText
+                                            int indexOfRunningTransfer = getIndexOfRunningTransfer();
+                                            if (indexOfRunningTransfer != -1) {
+                                                String downloadName = DOWNLOAD_NAMES[indexOfRunningTransfer];
+                                                downloadName = downloadName.replace(".onnx", "");
+                                                downloadName = downloadName.replace("_", " ");
+                                                progressDescriptionText.setText(getString(R.string.description_transfer, downloadName));
+                                            } else {
+                                                SharedPreferences sharedPreferences = global.getSharedPreferences("default", Context.MODE_PRIVATE);
+                                                long currentDownloadId = sharedPreferences.getLong("currentDownloadId", -1);
+                                                if (currentDownloadId >= 0) {
+                                                    int indexOfRunningDownload = downloader.findDownloadUrlIndex(currentDownloadId);
+                                                    if (indexOfRunningDownload >= 0) {
+                                                        String downloadName = DOWNLOAD_NAMES[indexOfRunningDownload];
+                                                        downloadName = downloadName.replace(".onnx", "");
+                                                        downloadName = downloadName.replace("_", " ");
+                                                        progressDescriptionText.setText(getString(R.string.description_download, downloadName));
+                                                    }
                                                 }
                                             }
                                         }

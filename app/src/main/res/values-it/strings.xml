@@ -20,6 +20,7 @@
     <string name="btHeadset">bt-headset</string>
     <string name="exit">esci</string>
     <string name="retry">riprova</string>
+    <string name="continue_without_tts">continua</string>
     <string name="delete">elimina</string>
     <string name="no_devices">no devices</string>
     <string name="available">disponibile</string>
@@ -60,8 +61,9 @@
 
     <string name="error_missing_location_permissions">Non é possibile eseguire la modalità Conversazione senza il permesso per la posizione e del bluetooth, andare nelle impostazioni per concederli, oppure reinstallare l\' app</string>
     <string name="error_missing_mic_permissions">Senza il permesso per il microfono il riconoscimento vocale non funziona, andare nelle impostazioni per concedere il permesso oppure reinstalla l\' app</string>
-    <string name="error_tts">C\'è stato un errore con l\'inizializzazione del tts</string>
-    <string name="error_missing_tts">In questo device non è presente il motore di sintesi vocale di google, scaricalo per poter usare l\' applicazione</string>
+    <string name="error_tts_toast">TTS mancante</string>
+    <string name="error_tts">C\'è stato un errore con l\'inizializzazione del tts, vuoi continuare senza tts?</string>
+    <string name="error_missing_tts">In questo device non è presente il motore di sintesi vocale di google, scaricalo per poter usare il tts</string>
     <string name="error_wrong_api_key_file">Il file chiave per usare l\'API non funziona, inserire un file chiave funzionante</string>
     <string name="error_missing_api_key_file">Inserire il file chiave per usare l\'API</string>
     <string name="error_missing_bluetooth_le">Non é possibile eseguire la modalità Conversazione perché questo dispositivo non ha il Bluetooth Low Energy</string>

@@ -84,7 +84,8 @@ public class LoadingActivity extends GeneralActivity {
         } else if (global.getTranslator() != null && global.getSpeechRecognizer() != null) {
             startVoiceTranslationActivity();
         } else {
-            initializeApp();
+            initializeApp(false);
+            //onFailure(new int[]{ErrorCodes.GOOGLE_TTS_ERROR}, 0);
         }
     }
 
@@ -94,8 +95,8 @@ public class LoadingActivity extends GeneralActivity {
         isVisible = false;
     }
 
-    private void initializeApp() {
-        global.getLanguages(false, new Global.GetLocalesListListener() {
+    private void initializeApp(boolean ignoreTTSError) {
+        global.getLanguages(false, ignoreTTSError, new Global.GetLocalesListListener() {
             @Override
             public void onSuccess(ArrayList<CustomLocale> result) {
                 global.initializeTranslator(new Translator.InitListener() {
@@ -148,7 +149,7 @@ public class LoadingActivity extends GeneralActivity {
                 showGoogleTTSErrorDialog(new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        initializeApp();
+                        initializeApp(true);
                     }
                 });
             }
@@ -173,7 +174,7 @@ public class LoadingActivity extends GeneralActivity {
                     builder.setPositiveButton(R.string.retry, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            initializeApp();
+                            initializeApp(false);
                         }
                     });
                     AlertDialog dialog = builder.create();
@@ -212,7 +213,12 @@ public class LoadingActivity extends GeneralActivity {
             @Override
             public void run() {
                 if (isVisible) {
-                    showMissingGoogleTTSDialog();
+                    showMissingGoogleTTSDialog(new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            initializeApp(true);
+                        }
+                    });
                 }
             }
         });

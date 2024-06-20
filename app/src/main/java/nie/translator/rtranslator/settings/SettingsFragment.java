@@ -93,7 +93,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                     break;
                 }
                 case ON_MISSING_GOOGLE_TTS:
-                    activity.showMissingGoogleTTSDialog();
+                    activity.showMissingGoogleTTSDialog(null);
                     break;
 
             }

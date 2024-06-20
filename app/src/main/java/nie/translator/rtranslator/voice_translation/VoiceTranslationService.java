@@ -29,9 +29,12 @@ import android.os.Messenger;
 import android.os.PowerManager;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
+import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import nie.translator.rtranslator.GeneralService;
+import nie.translator.rtranslator.R;
 import nie.translator.rtranslator.bluetooth.tools.Timer;
 import nie.translator.rtranslator.tools.CustomLocale;
 import nie.translator.rtranslator.tools.TTS;
@@ -78,6 +81,7 @@ public abstract class VoiceTranslationService extends GeneralService {
     protected Handler clientHandler;
     protected Recorder mVoiceRecorder;
     protected UtteranceProgressListener ttsListener;
+    @Nullable
     protected TTS tts;
     protected Handler mainHandler;
     private static final long WAKELOCK_TIMEOUT = 600 * 1000L;  // 10 minutes, so if the service stopped without calling onDestroyed the wakeLock would still be released within 10 minutes (the wakeLock will be reacquired before the 10 minutes if the service is still running)
@@ -148,11 +152,14 @@ public abstract class VoiceTranslationService extends GeneralService {
         tts = new TTS(this, new TTS.InitListener() {  // tts initialization (to be improved, automatic package installation)
             @Override
             public void onInit() {
-                tts.setOnUtteranceProgressListener(ttsListener);
+                if(tts != null) {
+                    tts.setOnUtteranceProgressListener(ttsListener);
+                }
             }
 
             @Override
             public void onError(int reason) {
+                tts = null;
                 notifyError(new int[]{reason}, -1);
                 isAudioMute = true;
             }
@@ -236,7 +243,7 @@ public abstract class VoiceTranslationService extends GeneralService {
 
     public synchronized void speak(String result, CustomLocale language) {
         synchronized (mLock) {
-            if (tts.isActive() && !isAudioMute) {
+            if (tts != null && tts.isActive() && !isAudioMute) {
                 utterancesCurrentlySpeaking++;
                 if (shouldStopMicDuringTTS()) {
                     stopVoiceRecorder();
@@ -320,8 +327,10 @@ public abstract class VoiceTranslationService extends GeneralService {
         mVoiceRecorder.destroy();
         mVoiceRecorder = null;
         //stop tts
-        tts.stop();
-        tts.shutdown();
+        if(tts != null) {
+            tts.stop();
+            tts.shutdown();
+        }
         //stop foreground
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             stopForeground(Service.STOP_FOREGROUND_REMOVE);
@@ -379,7 +388,7 @@ public abstract class VoiceTranslationService extends GeneralService {
                     return true;
                 case START_SOUND:
                     isAudioMute = false;
-                    if (!tts.isActive()) {
+                    if (tts != null && !tts.isActive()) {
                         initializeTTS();
                     }
                     return true;
@@ -387,7 +396,9 @@ public abstract class VoiceTranslationService extends GeneralService {
                     isAudioMute = true;
                     if (utterancesCurrentlySpeaking > 0) {
                         utterancesCurrentlySpeaking = 0;
-                        tts.stop();
+                        if(tts != null) {
+                            tts.stop();
+                        }
                         ttsListener.onDone("");
                     }
                     return true;
@@ -400,6 +411,7 @@ public abstract class VoiceTranslationService extends GeneralService {
                     bundle.putParcelableArrayList("messages", messages);
                     bundle.putBoolean("isMicMute", isMicMute);
                     bundle.putBoolean("isAudioMute", isAudioMute);
+                    bundle.putBoolean("isTTSError", tts == null);
                     bundle.putBoolean("isEditTextOpen", isEditTextOpen);
                     bundle.putBoolean("isBluetoothHeadsetConnected", isBluetoothHeadsetConnected());
                     super.notifyToClient(bundle);
@@ -468,10 +480,11 @@ public abstract class VoiceTranslationService extends GeneralService {
                         ArrayList<GuiMessage> messages = data.getParcelableArrayList("messages");
                         boolean isMicMute = data.getBoolean("isMicMute");
                         boolean isAudioMute = data.getBoolean("isAudioMute");
+                        boolean isTTSError = data.getBoolean("isTTSError");
                         boolean isEditTextOpen = data.getBoolean("isEditTextOpen");
                         boolean isBluetoothHeadsetConnected = data.getBoolean("isBluetoothHeadsetConnected");
                         while (attributesListeners.size() > 0) {
-                            attributesListeners.remove(0).onSuccess(messages, isMicMute, isAudioMute, isEditTextOpen, isBluetoothHeadsetConnected);
+                            attributesListeners.remove(0).onSuccess(messages, isMicMute, isAudioMute, isTTSError, isEditTextOpen, isBluetoothHeadsetConnected);
                         }
                         return true;
                     }
@@ -625,7 +638,7 @@ public abstract class VoiceTranslationService extends GeneralService {
     }
 
     public interface AttributesListener {
-        void onSuccess(ArrayList<GuiMessage> messages, boolean isMicMute, boolean isAudioMute, boolean isEditTextOpen, boolean isBluetoothHeadsetConnected);
+        void onSuccess(ArrayList<GuiMessage> messages, boolean isMicMute, boolean isAudioMute, boolean isTTSError, boolean isEditTextOpen, boolean isBluetoothHeadsetConnected);
     }
 
     protected abstract class VoiceTranslationServiceRecognizerListener implements RecognizerListener {

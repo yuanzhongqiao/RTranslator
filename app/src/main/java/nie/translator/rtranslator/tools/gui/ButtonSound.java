@@ -36,6 +36,14 @@ public class ButtonSound extends DeactivableButton {
         super(context, attrs, defStyleAttr);
     }
 
+    @Override
+    public void deactivate(int reason) {
+        super.deactivate(reason);
+        if(reason == DEACTIVATED_FOR_TTS_ERROR) {
+            setMute(true);
+        }
+    }
+
     public boolean isMute() {
         return isMute;
     }

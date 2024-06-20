@@ -20,6 +20,9 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.util.AttributeSet;
 import androidx.appcompat.widget.AppCompatImageButton;
+
+import java.net.PortUnreachableException;
+
 import javax.annotation.Nullable;
 
 public class DeactivableButton extends AppCompatImageButton {
@@ -28,12 +31,14 @@ public class DeactivableButton extends AppCompatImageButton {
     public static final int DEACTIVATED_FOR_CREDIT_EXHAUSTED =2;
     public static final int DEACTIVATED_FOR_MISSING_MIC_PERMISSION =3;
     public static final int DEACTIVATED_FOR_MISSING_OR_WRONG_KEYFILE =4;
+    public static final int DEACTIVATED_FOR_TTS_ERROR=5;
     protected int activationStatus=0;
     private OnClickListener activatedClickListener;
     private OnClickListener deactivatedClickListener;
     private OnClickListener deactivatedForCreditExhaustedClickListener;
     private OnClickListener deactivatedForMissingMicPermissionClickListener;
     private OnClickListener deactivatedForMissingOrWrongKeyfileClickListener;
+    private OnClickListener deactivatedForTTSErrorClickListener;
     public static ColorStateList deactivatedColor;
     public static ColorStateList activatedColor;
     protected ColorStateList color;
@@ -85,6 +90,13 @@ public class DeactivableButton extends AppCompatImageButton {
         }
     }
 
+    public void setOnClickListenerForTTSError(@Nullable OnClickListener l){
+        deactivatedForTTSErrorClickListener = l;
+        if(activationStatus == DEACTIVATED_FOR_TTS_ERROR){
+            super.setOnClickListener(l);
+        }
+    }
+
     public void deactivate(int reason){
         activationStatus=reason;
         switch (reason){
@@ -104,12 +116,18 @@ public class DeactivableButton extends AppCompatImageButton {
                 super.setOnClickListener(deactivatedForMissingOrWrongKeyfileClickListener);
                 break;
             }
+            case DEACTIVATED_FOR_TTS_ERROR: {
+                super.setOnClickListener(deactivatedForTTSErrorClickListener);
+                break;
+            }
         }
     }
 
     public void activate(boolean start){
-        activationStatus=ACTIVATED;
-        super.setOnClickListener(activatedClickListener);
+        if(activationStatus != DEACTIVATED_FOR_TTS_ERROR) {
+            activationStatus = ACTIVATED;
+            super.setOnClickListener(activatedClickListener);
+        }
     }
 
 

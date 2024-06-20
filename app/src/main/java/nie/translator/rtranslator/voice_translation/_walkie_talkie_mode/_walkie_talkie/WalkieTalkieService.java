@@ -181,7 +181,7 @@ public class WalkieTalkieService extends VoiceTranslationService {
                 // we save every new message in the exchanged messages so that the fragment can restore them
                 WalkieTalkieService.super.addOrUpdateMessage(message);
                 //if the tts is not active we restart the mic here
-                if(!tts.isActive() || isAudioMute){
+                if(tts == null || !tts.isActive() || isAudioMute){
                     startVoiceRecorder();
                     notifyMicProgrammaticallyStarted();
                 }
@@ -191,7 +191,7 @@ public class WalkieTalkieService extends VoiceTranslationService {
             public void onFailure(int[] reasons, long value) {
                 WalkieTalkieService.super.notifyError(reasons,value);
                 //if the tts is not active we restart the mic here
-                if(!tts.isActive() || isAudioMute){
+                if(tts == null || !tts.isActive() || isAudioMute){
                     startVoiceRecorder();
                     notifyMicProgrammaticallyStarted();
                 }
@@ -208,7 +208,7 @@ public class WalkieTalkieService extends VoiceTranslationService {
                 // we save every new message in the exchanged messages so that the fragment can restore them
                 WalkieTalkieService.super.addOrUpdateMessage(message);
                 //if the tts is not active we restart the mic here
-                if(!tts.isActive() || isAudioMute){
+                if(tts == null || !tts.isActive() || isAudioMute){
                     startVoiceRecorder();
                     notifyMicProgrammaticallyStarted();
                 }
@@ -218,7 +218,7 @@ public class WalkieTalkieService extends VoiceTranslationService {
             public void onFailure(int[] reasons, long value) {
                 WalkieTalkieService.super.notifyError(reasons,value);
                 //if the tts is not active we restart the mic here
-                if(!tts.isActive() || isAudioMute){
+                if(tts == null || !tts.isActive() || isAudioMute){
                     startVoiceRecorder();
                     notifyMicProgrammaticallyStarted();
                 }
