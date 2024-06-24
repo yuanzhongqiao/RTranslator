@@ -1,138 +1,92 @@
-<img src="https://github.com/niedev/RTranslator/blob/v2.00/images/logo_beta_cut.png" width="280">
-
-RTranslator is an (<a href='https://github.com/niedev/RTranslator?tab=readme-ov-file#libraries-and-models'>almost</a>) open-source, free, and offline real-time translation app for Android.
-
-Connect to someone who has the app, connect Bluetooth headphones, put the phone in your pocket and you can have a conversation as if the other person spoke your language.
-<br /><br />
-
-![Conversation mode](https://github.com/niedev/RTranslator/blob/v2.00/images/Conversation_image.png)
-<br /><br />
-![WalkieTalkie mode and Costs](https://github.com/niedev/RTranslator/blob/v2.00/images/TextTranslation_and_WalkieTalkie.png)
-<br /><br />
-
-<h3>Conversation mode</h3>
-
-The Conversation mode is the main feature of RTranslator. In this mode, you can connect with another phone that uses this app. If the user accepts your connection request:
-
-- When you talk, your phone (or the Bluetooth headset, if connected) will capture the audio.
-
-- The audio captured will be converted into text and sent to the interlocutor's phone.
-
-- The interlocutors' phone will translate the text received into his language.
-
-- The interlocutors' phone will convert the translated text into audio and will reproduce it from its speaker (or by the Bluetooth headset of the interlocutor if connected to his phone). 
-
-All this in both directions.
-
-Each user can have more than one connected phone so that you can translate conversations between more than two people and in any combination.
-<br /><br />
-
-<h3>WalkieTalkie mode</h3>
-
-If conversation mode is useful for having a long conversation with someone, this mode instead is designed for quick conversations, such as asking for information on the street or talking to a shop assistant.
-
-This mode only translates conversations between two people, it doesn't work with Bluetooth headsets, and you have to talk in turns. It's not a real simultaneous translation, but it can work with only one phone.
-
-In this mode, the smartphone microphone will listen in two languages (selectable in the same screen of the walkie talkie mode) simultaneously. <br />
-The app will detect in which language the interlocutor is speaking, translate the audio into the other language, convert the text into audio, and then reproduce it from the phone speaker. When the TTS has finished, it will automatically resume listening.
-<br /><br />
-
-<h3>Text translation mode</h3>
-
-This mode is just a classic text translator, but always useful.
-<br /><br />
-
-<h3>General</h3>
-
-RTranslator uses <a href="https://ai.meta.com/research/no-language-left-behind/">Meta\'s NLLB</a> for translation and <a href="https://openai.com/index/whisper/">OpenAi\'s Whisper</a> for speech recognition, both are (<a href='https://github.com/niedev/RTranslator?tab=readme-ov-file#libraries-and-models'>almost</a>) open-source and state of the art AIs, have excellent quality and run directly on the phone, ensuring absolute privacy and the possibility of using RTranslator even offline without loss of quality.
-
-Also, RTranslator works even in the background, with the phone on standby or when using other apps (only when you use Conversation or WalkieTalkie modes). However, some phones limit the power in the background so in that case it is better to avoid it and keep the app open with the screen on.
-
-<a href="https://www.producthunt.com/posts/rtranslator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-rtranslator" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=274849&theme=light" alt="RTranslator - World's first open-source simultaneous translation app. | Product Hunt" style="width: 250px; height: 80px;" /></a>
-<br /><br />
-
-<h3>What's new in version 2.0</h3>
-
-The Google API's have been replaced by <a href="https://ai.meta.com/research/no-language-left-behind/">Meta\'s NLLB</a> for translation and <a href="https://openai.com/index/whisper/">OpenAi\'s Whisper</a> for speech recognition. These AI models run directly on your phone, so now the app is totally free and with no configuration required!
-
-A classic text translation mode has been added.
-
-Bluetooth LE device search has been improved.
-
-Fixed some bugs.
-<br /><br />
-
-<h3>Performance</h3>
-
-I have optimized the AI models a lot to minimize RAM consumption and execution time, despite this however to be able to use the app without the risk of crashing you need a phone with at least **6GB of RAM**, and to have a good enough execution time you need a phone with a fast enough CPU.
-
-If you have a pretty crappy phone (or if you want maximum speed) you can always use <a href="https://github.com/niedev/RTranslator/tree/v1.00">version 1.0 of RTranslator</a> (but since it uses Google APIs it's not free and needs some initial setup).
-<br /><br />
-
-
-<h3>Download</h3>
-
-To install the app, download the latest version of the app apk file from https://github.com/niedev/RTranslator/releases/ and install it (ignore the other files, those will be downloaded automatically by the app on the first start).
-
-<a href='https://github.com/niedev/RTranslator/releases'><img alt='Get it on GitHub' src='https://github.com/niedev/RTranslator/blob/v2.00/images/get_it_on_github.png' style="width: 180px; height: 58px;" /></a>
-
-On the first launch, you will need to download the models for translation and speech recognition (1.2GB) and once done you can start translating.
-<br /><br />
-
-
-<h3>Supported languages</h3>
-
-The languages supported are as follows:
-
-Arabic, Bulgarian, Catalan, Chinese, Czech, Danish, German, Greek, English, Spanish, Finnish, French, Croatian, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Romanian, Russian, Slovak, Swedish, Tamil, Thai, Turkish, Ukrainian, Urdu, Vietnamese.
-<br /><br />
-
-<h3>Privacy</h3>
-
-Privacy is a fundamental right. That's why RTranslator does not collect any personal data (I don't even have a server). For more information, read the <a href="https://github.com/niedev/RTranslator/blob/v2.00/privacy/Privacy_Policy_en.md" target="_blank" rel="noopener noreferrer">privacy policy</a> (for now is the same privacy policy of RTranslator 1.0, but I will update it in the future).
-<br /><br />
-
-<h3>Libraries and models</h3>
-
-RTranslator code is completely open-source, but some of the external libraries it uses have less permissive licenses, these are all the external libraries used by the app (with the indication of their license):
-
-<a href="https://github.com/niedev/BluetoothCommunicator">BluetoothCommunicator</a> (open-source): Used for Bluetooth LE communication between devices.
-
-<a href="https://github.com/niedev/GalleryImageSelector">GalleryImageSelector</a> (open-source): Used for selecting and cropping the profile image from the gallery.
-
-[OnnxRuntime](https://github.com/microsoft/onnxruntime) (open-source): Used as an accelerator engine for the AI models.
-
-<a href="https://github.com/google/sentencepiece">SentencePiece</a> (open-source): Used for tokenization of the input text for NLLB.
-
-<a href="https://developers.google.com/ml-kit/language/identification">Ml Kit</a> (closed-source): Used for the identification of the language in the WalkieTalkie mode.
-<br /><br />
-And the following AI models:
-
-<a href="https://github.com/facebookresearch/fairseq/tree/nllb">NLLB</a> (open-source, but only for non-commercial use): The model used is NLLB-Distilled-600M with KV cache.
-
-<a href="https://github.com/openai/whisper">Whisper</a> (open-source): The model used is Whisper-Small-244M with KV cache.
-
-I converted both models to onnx format and quantized them in int8 (excluding some weights to ensure almost zero quality loss), also I separated some parts of the models to reduce RAM consumption (without this separation some weights were duplicated at runtime consuming more RAM than expected).
-<br /><br />
-
-<h3>Donations</h3>
-
-This is an open-source and completely ad-free app, I don't make any money from it.
-
-So, if you like the app and want to say thank you and support the project, you can make a donation via PayPal by clicking on the button below (any amount is well accepted).
-
-<a href='https://www.paypal.com/donate/?business=3VBKS3WC6AFHN&no_recurring=0&currency_code=EUR'><img alt='Donate' src='https://raw.githubusercontent.com/niedev/RTranslator/v2.00/images/Paypal.png' style="width: 190px; height: 80px;" /></a>
-
-In case you will donate, or just live a star, thank you :heart:
-<br /><br />
-
-<h3>Bugs and problems</h3>
-I remind you that the app is still in beta. The bugs found are the following:
-
-- For some languages, the TTS does not work. Reinstall the text-to-speech engine to solve.
-- Sometimes the Bluetooth connection drops.
-
-If you have found any bug please report it by opening an issue, or by writing an email to contact.niedev@gmail.com
-<br /><br />
-
-Enjoy your simultaneous translator.
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/niedev/RTranslator/blob/v2.00/images/logo_beta_cut.png"><img src="https://github.com/niedev/RTranslator/raw/v2.00/images/logo_beta_cut.png" width="280" style="max-width: 100%;"></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RTranslator 是一款适用于 Android 的（</font></font><a href="https://github.com/niedev/RTranslator?tab=readme-ov-file#libraries-and-models"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">几乎</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）开源、免费、离线实时翻译应用程序。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">连接到拥有该应用程序的人，连接蓝牙耳机，将手机放在口袋中，您就可以像对方说您的语言一样进行对话。
+</font></font><br><br></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/niedev/RTranslator/blob/v2.00/images/Conversation_image.png"><img src="https://github.com/niedev/RTranslator/raw/v2.00/images/Conversation_image.png" alt="对话模式" style="max-width: 100%;"></a>
+<br><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/niedev/RTranslator/blob/v2.00/images/TextTranslation_and_WalkieTalkie.png"><img src="https://github.com/niedev/RTranslator/raw/v2.00/images/TextTranslation_and_WalkieTalkie.png" alt="对讲机模式和成本" style="max-width: 100%;"></a>
+<br><br></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对话模式</font></font></h3><a id="user-content-conversation-mode" class="anchor" aria-label="永久链接：对话模式" href="#conversation-mode"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对话模式是 RTranslator 的主要功能。在此模式下，您可以与使用此应用的另一部手机连接。如果用户接受您的连接请求：</font></font></p>
+<ul dir="auto">
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">当您说话时，您的手机（或蓝牙耳机，如果已连接）将捕捉音频。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">捕获的音频将被转换成文本并发送到对话者的手机。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对话者的手机会将收到的文本翻译成他的语言。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对话者的手机会将翻译后的文本转换为音频，并通过扬声器（或通过连接到对话者的手机的蓝牙耳机）播放。</font></font></p>
+</li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这一切都是双向的。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">每个用户可以拥有多部连接电话，这样您就可以在两人以上以任意组合进行对话翻译。
+</font></font><br><br></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对讲机模式</font></font></h3><a id="user-content-walkietalkie-mode" class="anchor" aria-label="永久链接：对讲机模式" href="#walkietalkie-mode"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果对话模式适合与某人进行长时间对话，那么此模式则适合快速对话，例如在街上询问信息或与店员交谈。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此模式仅翻译两人之间的对话，不支持蓝牙耳机，而且必须轮流说话。这不是真正的同声传译，但只能使用一部手机。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在此模式下，智能手机麦克风将同时收听两种语言（可在对讲机模式的同一屏幕中选择）。</font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+应用程序将检测对话者正在使用哪种语言说话，将音频翻译成另一种语言，将文本转换为音频，然后从手机扬声器中重现。TTS 完成后，它将自动恢复收听。
+</font></font><br><br></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文本翻译模式</font></font></h3><a id="user-content-text-translation-mode" class="anchor" aria-label="永久链接：文本翻译模式" href="#text-translation-mode"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此模式只是一个经典的文本翻译器，但总是有用的。
+</font></font><br><br></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">一般的</font></font></h3><a id="user-content-general" class="anchor" aria-label="固定链接：一般" href="#general"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RTranslator 使用</font></font><a href="https://ai.meta.com/research/no-language-left-behind/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Meta 的 NLLB</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">进行翻译，使用</font></font><a href="https://openai.com/index/whisper/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OpenAi 的 Whisper</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">进行语音识别，两者都是（</font></font><a href="https://github.com/niedev/RTranslator?tab=readme-ov-file#libraries-and-models"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">几乎</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）开源和最先进的人工智能，具有出色的质量并可直接在手机上运行，&ZeroWidthSpace;&ZeroWidthSpace;确保绝对的隐私，并且可以在离线的情况下使用 RTranslator 而不会损失质量。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此外，RTranslator 甚至可以在后台运行，当手机处于待机状态或使用其他应用程序时（仅当您使用对话或对讲模式时）。但是，有些手机会限制后台电量，因此在这种情况下最好避免这种情况并保持应用程序打开且屏幕亮着。</font></font></p>
+<p dir="auto"><a href="https://www.producthunt.com/posts/rtranslator?utm_source=badge-featured&amp;utm_medium=badge&amp;utm_souce=badge-rtranslator" rel="nofollow"><img src="https://camo.githubusercontent.com/67a5b6a469e8e48c17fd36762e1f96dc4208170ff75d71c27c65dfd1b206b2ad/68747470733a2f2f6170692e70726f6475637468756e742e636f6d2f776964676574732f656d6265642d696d6167652f76312f66656174757265642e7376673f706f73745f69643d323734383439267468656d653d6c69676874" alt="RTranslator - 世界上第一个开源同声翻译应用程序。| Product Hunt" style="width: 250px; height: 80px; max-width: 100%;" data-canonical-src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=274849&amp;theme=light"></a>
+<br><br></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2.0 版新增功能</font></font></h3><a id="user-content-whats-new-in-version-20" class="anchor" aria-label="永久链接：2.0 版新增功能" href="#whats-new-in-version-20"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Google API 已被</font></font><a href="https://ai.meta.com/research/no-language-left-behind/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Meta 的 NLLB</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">翻译和</font></font><a href="https://openai.com/index/whisper/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OpenAi 的 Whisper</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">语音识别所取代。这些 AI 模型直接在您的手机上运行，&ZeroWidthSpace;&ZeroWidthSpace;因此现在该应用完全免费，无需任何配置！</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">添加了经典的文本翻译模式。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">蓝牙 LE 设备搜索已得到改进。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">修正了一些错误。
+</font></font><br><br></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">表现</font></font></h3><a id="user-content-performance" class="anchor" aria-label="固定链接：性能" href="#performance"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我已经对 AI 模型进行了大量优化，以最大限度地减少 RAM 消耗和执行时间，尽管如此，为了能够使用该应用程序而不出现崩溃的风险，您需要一部至少具有</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6GB RAM 的</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">手机，并且为了获得足够好的执行时间，您需要一部具有足够快的 CPU 的手机。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您的手机很差劲（或者您想要最大速度），您可以使用</font></font><a href="https://github.com/niedev/RTranslator/tree/v1.00"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RTranslator 1.0 版</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（但由于它使用了 Google API，所以它不是免费的并且需要一些初始设置）。
+</font></font><br><br></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下载</font></font></h3><a id="user-content-download" class="anchor" aria-label="固定链接：下载" href="#download"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://github.com/niedev/RTranslator/releases/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要安装该应用程序，请从https://github.com/niedev/RTranslator/releases/</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下载最新版本的应用程序 apk 文件</font><font style="vertical-align: inherit;">并安装它（忽略其他文件，这些文件将在应用程序第一次启动时自动下载）。</font></font></p>
+<p dir="auto"><a href="https://github.com/niedev/RTranslator/releases"><img alt="在 GitHub 上获取" src="https://github.com/niedev/RTranslator/raw/v2.00/images/get_it_on_github.png" style="width: 180px; height: 58px; max-width: 100%;"></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">首次启动时，您需要下载翻译和语音识别模型（1.2GB），完成后即可开始翻译。
+</font></font><br><br></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持的语言</font></font></h3><a id="user-content-supported-languages" class="anchor" aria-label="固定链接：支持的语言" href="#supported-languages"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持的语言如下：</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">阿拉伯语、保加利亚语、加泰罗尼亚语、中文、捷克语、丹麦语、德语、希腊语、英语、西班牙语、芬兰语、法语、克罗地亚语、意大利语、日语、韩语、荷兰语、波兰语、葡萄牙语、罗马尼亚语、俄语、斯洛伐克语、瑞典语、泰米尔语、泰语、土耳其语、乌克兰语、乌尔都语、越南语。
+</font></font><br><br></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">隐私</font></font></h3><a id="user-content-privacy" class="anchor" aria-label="永久链接：隐私" href="#privacy"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">隐私是一项基本权利。这就是为什么 RTranslator 不收集任何个人数据（我甚至没有服务器）。有关更多信息，请阅读</font></font><a href="https://github.com/niedev/RTranslator/blob/v2.00/privacy/Privacy_Policy_en.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">隐私政策</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（目前与 RTranslator 1.0 的隐私政策相同，但我将来会更新它）。
+</font></font><br><br></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">库和模型</font></font></h3><a id="user-content-libraries-and-models" class="anchor" aria-label="永久链接：库和模型" href="#libraries-and-models"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RTranslator 代码完全开源，但它使用的某些外部库的许可证不太宽松，这些是应用程序使用的所有外部库（附有其许可证指示）：</font></font></p>
+<p dir="auto"><a href="https://github.com/niedev/BluetoothCommunicator"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">BluetoothCommunicator</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（开源）：用于设备之间的蓝牙 LE 通信。</font></font></p>
+<p dir="auto"><a href="https://github.com/niedev/GalleryImageSelector"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GalleryImageSelector</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（开源）：用于从图库中选择和裁剪个人资料图像。</font></font></p>
+<p dir="auto"><a href="https://github.com/microsoft/onnxruntime"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OnnxRuntime</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（开源）：用作AI模型的加速器引擎。</font></font></p>
+<p dir="auto"><a href="https://github.com/google/sentencepiece"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SentencePiece</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（开源）：用于对 NLLB 的输入文本进行标记。</font></font></p>
+<p dir="auto"><a href="https://developers.google.com/ml-kit/language/identification" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ml Kit</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（闭源）：用于WalkieTalkie模式下的语言识别。
+</font></font><br><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+以及以下AI模型：</font></font></p>
+<p dir="auto"><a href="https://github.com/facebookresearch/fairseq/tree/nllb"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NLLB</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（开源，但仅供非商业使用）：使用的模型是带有KV缓存的NLLB-Distilled-600M。</font></font></p>
+<p dir="auto"><a href="https://github.com/openai/whisper"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Whisper</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（开源）：使用的模型是带有 KV 缓存的 Whisper-Small-244M。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我将两个模型都转换为 onnx 格式，并在 int8 中对其进行量化（排除一些权重以确保几乎零质量损失），同时我还分离了模型的某些部分以减少 RAM 消耗（如果没有这种分离，一些权重在运行时会重复，消耗的 RAM 会比预期的多）。
+</font></font><br><br></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">捐款</font></font></h3><a id="user-content-donations" class="anchor" aria-label="永久链接：捐赠" href="#donations"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这是一个开源且完全无广告的应用程序，我不会从中赚到任何钱。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">因此，如果您喜欢该应用程序并想表示感谢并支持该项目，您可以通过点击下面的按钮通过 PayPal 进行捐赠（任何金额都可以接受）。</font></font></p>
+<p dir="auto"><a href="https://www.paypal.com/donate/?business=3VBKS3WC6AFHN&amp;no_recurring=0&amp;currency_code=EUR" rel="nofollow"><img alt="捐" src="https://raw.githubusercontent.com/niedev/RTranslator/v2.00/images/Paypal.png" style="width: 190px; height: 80px; max-width: 100%;"></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果你愿意捐款，或者只是活出明星，谢谢❤️
+</font></font><br><br></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">错误和问题</font></font></h3><a id="user-content-bugs-and-problems" class="anchor" aria-label="永久链接：错误和问题" href="#bugs-and-problems"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+我提醒您，该应用程序仍处于测试阶段。发现的错误如下：
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对于某些语言，TTS 不起作用。重新安装文本转语音引擎即可解决。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有时蓝牙连接会断开。</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您发现任何错误，请通过打开问题或发送电子邮件至</font></font><a href="mailto:contact.niedev@gmail.com"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">contact.niedev@gmail.com进行报告</font></font></a>
+<br><br></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">享受您的同声传译。</font></font></p>
+</article></div>
